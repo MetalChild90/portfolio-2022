@@ -1,13 +1,318 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@300;400;500&display=swap");
+
+/*
+font-family: 'Dancing Script', cursive;
+font-family: 'Montserrat', sans-serif;*/
+
+:root {
+  --black: #010101;
+  /* --black-opacity: rgba(0, 0, 0, 0.4); */
+  --white: #f1f1f1;
+  --white-opacity: rgba(255, 255, 255, 0.6);
+  --grey: rgb(212, 209, 209);
+  --purple: #704d99;
+  --turboDarkTurquiose: #000e06;
+  --veryDarkTurquiose: #002223;
+  --darkTurquiose: #025043;
+  --turquoise: #036c5f;
+  --lightTurquoise: #048c7f;
+
+  --textOutlineColor: rgb(190, 187, 187);
+
+  --paddingSuperSmall: 10px;
+  --paddingSmall: 20px;
+  --paddingMedium: 30px;
+
+  --marginSuperSmall: 10px;
+  --marginSmall: 20px;
+  --marginMedium: 40px;
+  --marginBig: 60px;
+
+  --radiusSmall: 5px;
+  --radiusMedium: 15px;
+  --radiusBig: 25px;
+  --radiusRound: 50%;
+
+  --transition-duration: 0.3s;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--turboDarkTurquiose);
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1200px;
+  height: calc(100vh - 138px);
+  margin: 0 auto;
+  border-left: 2px solid var(--veryDarkTurquiose);
+  border-right: 2px solid var(--veryDarkTurquiose);
+  overflow: hidden;
+  background-color: var(--grey);
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.Header {
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--paddingSmall);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--veryDarkTurquiose);
+}
+
+.Footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: var(--paddingSuperSmall);
+  text-align: center;
+  font-size: 24px;
+  background-color: var(--veryDarkTurquiose);
+  font-family: "Dancing Script", cursive;
+  color: var(--white);
+}
+
+.Navbar {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--darkTurquiose);
+}
+
+.Navbar ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.active {
+  background-color: var(--turquoise);
+}
+
+.Navbar-link {
+  display: block;
+  padding: var(--paddingMedium);
+  cursor: pointer;
+  font-size: 40px;
+  color: var(--white);
+  transition: 0.2s;
+}
+
+.Navbar-link:hover {
+  background-color: var(--turquoise);
+}
+
+.Home-console-underscore {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  left: 5px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#welcome {
+  margin-top: 100px;
+}
+
+.Projects {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.Projects-bookmarks-wrapper {
+  display: flex;
+  z-index: 1;
+}
+
+.Project-shrinked {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: calc(100vh - 138px);
+  border-right: 3px solid var(--black);
+  background-color: var(--darkTurquiose);
+  color: var(--white);
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.Project-shrinked:nth-child(1) {
+  border-left: 3px solid var(--black);
+}
+
+.Project-shrinked-text {
+  text-align: center;
+  font-size: 24px;
+  min-width: 400px;
+  transform: rotate(-90deg);
+}
+
+.Project-detail-wrapper {
+  text-align: center;
+  width: 900px;
+  background-color: #fff;
+  transition: 0.4s 0.2s;
+  opacity: 0;
+}
+
+.Project-detail-visible {
+  opacity: 1;
+}
+
+.Project-detail-image-box img {
+  max-width: 500px;
+}
+
+.Knowledge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.Knowledge ul {
+  list-style: none;
+}
+
+.Knowledge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--paddingSuperSmall) var(--paddingSmall);
+  margin: var(--marginSmall);
+  font-size: 40px;
+  text-shadow: 2px 2px 0 var(--textOutlineColor),
+    2px -2px 0 var(--textOutlineColor), -2px 2px 0 var(--textOutlineColor),
+    -2px -2px 0 var(--textOutlineColor), 2px 0px 0 var(--textOutlineColor),
+    0px 2px 0 var(--textOutlineColor), -2px 0px 0 var(--textOutlineColor),
+    0px -2px 0 var(--textOutlineColor);
+  color: var(--grey);
+  border-radius: var(--radiusSmall);
+  transition: 0.3s;
+}
+
+.Contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.petal {
+  position: absolute;
+  top: 110%;
+  left: 5px;
+  display: block;
+  height: 350px;
+  width: 40px;
+  background-color: var(--darkTurquiose);
+  border-radius: 50%;
+  transform-origin: 45% -9%;
+  animation: spin 60s linear infinite;
+}
+
+.petal:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.petal:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -5s;
+}
+
+.petal:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -10s;
+}
+
+.petal:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -15s;
+}
+
+.petal:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -20s;
+}
+
+.petal:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -25s;
+}
+
+.petal:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -30s;
+}
+
+.petal:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -35s;
+}
+
+.petal:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -40s;
+}
+
+.petal:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -45s;
+}
+
+.petal:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -50s;
+}
+
+.petal:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: -55s;
+}
+
+.center {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: var(--darkTurquiose);
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
