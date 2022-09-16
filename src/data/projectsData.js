@@ -3,19 +3,25 @@ import trackerImage from "../images/tracker.png";
 
 const projects = [
   {
+    id: 1,
     title: "Paradise Beach",
     image: beachImage,
-    features: ["responsivness, useRef, sass]"],
+    website: "",
+    github: "",
   },
   {
+    id: 2,
     title: "Crypto Tracker",
     image: trackerImage,
-    features: ["responsivness, useRef, sass]"],
+    website: "",
+    github: "",
   },
   {
+    id: 3,
     title: "Anime Character Review",
     image: beachImage,
-    features: ["responsivness, useRef, sass]"],
+    website: "",
+    github: "",
   },
 ];
 

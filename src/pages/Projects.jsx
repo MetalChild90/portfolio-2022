@@ -1,27 +1,20 @@
-import { useState, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
+import AppContext from "../context/AppContext";
 import BookmarksList from "../componenets/BookmarksList";
+import ProjectDisplay from "../componenets/ProjectDisplay";
 
 function Projects() {
-  // const [projectsWidth, setProjectsWidth] = useState(0);
+  const { setProjectsWidth } = useContext(AppContext);
 
-  // const ref = useRef(null);
-  // useEffect(() => {
-  //   setProjectsWidth(ref.current.offsetWidth);
-  // }, []);
+  const projectsRef = useRef(null);
+  useEffect(() => {
+    setProjectsWidth(projectsRef.current.offsetWidth);
+  }, [setProjectsWidth]);
 
   return (
-    // <div ref={ref} className="Projects">
-    <div className="Projects">
+    <div ref={projectsRef} className="Projects">
       <BookmarksList />
-      {/* <div
-      className={`Project-detail-wrapper ${
-        clicked ? "Project-detail-visible" : ""
-      }`}
-      >
-        <div className="Project-detail-image-box">
-          <img src={tracker} alt="tracker" />
-        </div>
-      </div> */}
+      <ProjectDisplay />
     </div>
   );
 }

@@ -1,24 +1,47 @@
-// import { useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
+import AppContext from "../context/AppContext";
 
 function Bookmark({ project }) {
-  //   const [bookmarkClicked, setBookmarkClicked] = useState(false);
-  //   const [translateVar, setTranslateVar] = useState("");
+  const {
+    contentWidth,
+    setActiveBookmark,
+    activeBookmark,
+    setBookmarkWidth,
+    wrapperHeight,
+  } = useContext(AppContext);
+  const [translateVar, setTranslateVar] = useState("");
 
-  //   const handleClick = () => {
-  //     setClicked((prevState) => !prevState);
-  //     setTranslateVar(`translateX(${projectsWidth - 150}px)`);
-  //   };
+  const bookmarkRef = useRef(0);
+
+  useEffect(() => {
+    setBookmarkWidth(bookmarkRef.current.offsetWidth);
+  }, [setBookmarkWidth]);
+
+  const handleClick = () => {
+    if (activeBookmark === 2 && project.id === 2) {
+      setActiveBookmark(null);
+    } else {
+      setActiveBookmark(project.id);
+    }
+  };
+
+  useEffect(() => {
+    setTranslateVar(`translateX(${contentWidth}px)`);
+  }, [contentWidth]);
 
   return (
     <div
-      className="Project-shrinked"
-      // style={{
-      //   transform: bookmarkClicked ? translateVar : "translateX(0px)",
-      //   borderLeft: bookmarkClicked ? "3px solid var(--black)" : "none",
-      // }}
-      // onClick={handleClick}
+      ref={bookmarkRef}
+      className="Bookmark"
+      style={{
+        transform: project.bookmarkMoved ? translateVar : "translateX(0px)",
+        borderLeft: project.bookmarkMoved ? "3px solid var(--black)" : "none",
+        borderRight: project.bookmarkMoved ? "none" : "3px solid var(--black)",
+        height: wrapperHeight + "px",
+      }}
+      onClick={handleClick}
     >
-      <div className="Project-shrinked-text">{project.title}</div>
+      <div className="Bookmark-text">{project.title}</div>
     </div>
   );
 }

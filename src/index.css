@@ -51,7 +51,6 @@ body {
   display: flex;
   align-items: flex-start;
   max-width: 1200px;
-  height: calc(100vh - 138px);
   margin: 0 auto;
   border-left: 2px solid var(--veryDarkTurquiose);
   border-right: 2px solid var(--veryDarkTurquiose);
@@ -63,26 +62,32 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
+}
+
+.inner-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .Header {
   width: 100%;
   margin: 0 auto;
   padding: var(--paddingSmall);
-  text-transform: uppercase;
   text-align: center;
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 500;
   color: var(--white);
   background-color: var(--veryDarkTurquiose);
+  font-style: italic;
 }
 
 .Footer {
-  position: absolute;
+  /* position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 0; */
   width: 100%;
   padding: var(--paddingSuperSmall);
   text-align: center;
@@ -95,8 +100,8 @@ body {
 .Navbar {
   display: flex;
   justify-content: center;
-  height: 100%;
   background-color: var(--darkTurquiose);
+  height: 100%;
 }
 
 .Navbar ul {
@@ -122,6 +127,22 @@ body {
   background-color: var(--turquoise);
 }
 
+.Home-title {
+  margin-bottom: var(--marginBig);
+}
+
+.Home-text {
+  font-size: 25px;
+  line-height: 2;
+  text-align: justify;
+}
+
+.Home-text-highlight {
+  font-weight: 700;
+  color: var(--darkTurquiose);
+  margin: 0 var(--marginSuperSmall);
+}
+
 .Home-console-underscore {
   display: inline-block;
   position: relative;
@@ -133,27 +154,28 @@ body {
   visibility: hidden;
 }
 
-#welcome {
-  margin-top: 100px;
-}
-
 .Projects {
+  position: relative;
   display: flex;
-  align-items: flex-start;
+  height: 100%;
   width: 100%;
 }
 
-.Projects-bookmarks-wrapper {
+.Bookmarks-wrapper {
   display: flex;
+  align-self: flex-start;
   z-index: 1;
 }
 
-.Project-shrinked {
+.Bookmarks-wrapper:nth-child(1) {
+  border-left: 3px solid var(--black);
+}
+
+.Bookmark {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50px;
-  height: calc(100vh - 138px);
   border-right: 3px solid var(--black);
   background-color: var(--darkTurquiose);
   color: var(--white);
@@ -161,20 +183,22 @@ body {
   cursor: pointer;
 }
 
-.Project-shrinked:nth-child(1) {
-  border-left: 3px solid var(--black);
-}
-
-.Project-shrinked-text {
+.Bookmark-text {
   text-align: center;
   font-size: 24px;
   min-width: 400px;
   transform: rotate(-90deg);
 }
 
+.ProjektDisplay {
+  position: relative;
+}
+
 .Project-detail-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
   text-align: center;
-  width: 900px;
   background-color: #fff;
   transition: 0.4s 0.2s;
   opacity: 0;
@@ -189,12 +213,12 @@ body {
 }
 
 .Knowledge {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 100%;
+  width: 100%; */
 }
 
 .Knowledge ul {
@@ -216,15 +240,20 @@ body {
     0px -2px 0 var(--textOutlineColor);
   color: var(--grey);
   border-radius: var(--radiusSmall);
+  user-select: none;
   transition: 0.3s;
 }
 
 .Contact {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
+  width: 100%; */
+}
+
+.Flower {
+  margin-right: var(--marginBig);
 }
 
 .petal {
@@ -232,8 +261,8 @@ body {
   top: 110%;
   left: 5px;
   display: block;
-  height: 350px;
-  width: 40px;
+  height: 24px;
+  width: 3px;
   background-color: var(--darkTurquiose);
   border-radius: 50%;
   transform-origin: 45% -9%;
@@ -302,10 +331,10 @@ body {
 .center {
   display: block;
   position: relative;
-  width: 50px;
-  height: 50px;
+  /* width: 5px;
+  height: 5px;
   background-color: var(--darkTurquiose);
-  border-radius: 50%;
+  border-radius: 50%; */
 }
 
 @keyframes spin {
@@ -315,4 +344,48 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.Contact-title {
+  font-size: 28px;
+  margin-bottom: var(--marginBig);
+}
+
+.Contact-text {
+  font-size: 25px;
+  line-height: 2;
+  margin: 80px 0;
+}
+
+.Contact-text ul {
+  list-style: none;
+  text-align: left;
+  margin-top: var(--marginMedium);
+}
+
+.Contact-text ul li {
+  margin-top: var(--marginSmall);
+}
+
+.Contact-text ul li a {
+  text-decoration: none;
+  margin: 0;
+}
+
+.Contact-text-highlight {
+  font-weight: 700;
+  color: var(--darkTurquiose);
+  margin: 0 var(--marginSuperSmall);
+}
+
+.Contact-item {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.Contact-goodbye {
+  text-align: center;
+  font-size: 26px;
+  margin-top: var(--marginBig);
 }
