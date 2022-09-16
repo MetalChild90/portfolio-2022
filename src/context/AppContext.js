@@ -1,7 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useCallback } from "react";
 import beachImage from "../images/beach.png";
 import trackerImage from "../images/tracker.png";
-import $ from "jquery";
 
 const AppContext = createContext();
 
@@ -44,9 +43,18 @@ export const Provider = ({ children }) => {
     setContentWidth(projectsWidth - bookmarkWidth * 3);
   }, [projectsWidth, bookmarkWidth]);
 
+  const updateWrapperHeight = useCallback(() => {
+    setWrapperHeight(window.innerHeight - headerHeight - footerHeight);
+  }, [setWrapperHeight, footerHeight, headerHeight]);
+
   useEffect(() => {
-    setWrapperHeight($(window).height() - headerHeight - footerHeight);
-  }, [wrapperHeight, footerHeight, headerHeight]);
+    window.addEventListener("resize", updateWrapperHeight);
+    setWrapperHeight(window.innerHeight - headerHeight - footerHeight);
+    return () => {
+      console.log("dismount");
+      window.removeEventListener("resize", updateWrapperHeight);
+    };
+  }, [setWrapperHeight, footerHeight, headerHeight, updateWrapperHeight]);
 
   useEffect(() => {
     if (activeBookmark === 2) {

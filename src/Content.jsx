@@ -7,7 +7,7 @@ import Projects from "./pages/Projects";
 import Knowledge from "./pages/Knowledge";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
-import { useContext, useEffect, useRef } from "react";
+import { useContext } from "react";
 import AppContext from "./context/AppContext";
 
 function Content() {

@@ -4,7 +4,7 @@ function Contact() {
   return (
     <div className="Contact inner-wrapper">
       <h3 className="Contact-title">
-        Thank you for taking time to checking out my portfolio!
+        Thank you for taking the time to check out my portfolio!
       </h3>
       <div className="Contact-text">
         <p>If you are interested in hiring me, you can contact me through:</p>

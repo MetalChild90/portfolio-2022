@@ -1,39 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@300;400;500&display=swap");
 
-/*
-font-family: 'Dancing Script', cursive;
-font-family: 'Montserrat', sans-serif;*/
-
 :root {
   --black: #010101;
-  /* --black-opacity: rgba(0, 0, 0, 0.4); */
   --white: #f1f1f1;
-  --white-opacity: rgba(255, 255, 255, 0.6);
   --grey: rgb(212, 209, 209);
-  --purple: #704d99;
   --turboDarkTurquiose: #000e06;
   --veryDarkTurquiose: #002223;
   --darkTurquiose: #025043;
   --turquoise: #036c5f;
   --lightTurquoise: #048c7f;
-
   --textOutlineColor: rgb(190, 187, 187);
 
-  --paddingSuperSmall: 10px;
-  --paddingSmall: 20px;
-  --paddingMedium: 30px;
-
-  --marginSuperSmall: 10px;
-  --marginSmall: 20px;
-  --marginMedium: 40px;
-  --marginBig: 60px;
+  /* margins and paddings values */
+  --SuperSmall: 10px;
+  --Small: 20px;
+  --Normal: 30px;
+  --Medium: 40px;
+  --Big: 60px;
 
   --radiusSmall: 5px;
-  --radiusMedium: 15px;
-  --radiusBig: 25px;
   --radiusRound: 50%;
 
-  --transition-duration: 0.3s;
+  --transition-duration-Short: 0.2s;
+  --transition-duration-Long: 0.4s;
 }
 
 * {
@@ -50,6 +39,7 @@ body {
 .wrapper {
   display: flex;
   align-items: flex-start;
+  height: calc(100vh - 99px);
   max-width: 1200px;
   margin: 0 auto;
   border-left: 2px solid var(--veryDarkTurquiose);
@@ -75,7 +65,7 @@ body {
 .Header {
   width: 100%;
   margin: 0 auto;
-  padding: var(--paddingSmall);
+  padding: var(--Small);
   text-align: center;
   font-size: 25px;
   font-weight: 500;
@@ -85,11 +75,8 @@ body {
 }
 
 .Footer {
-  /* position: absolute;
-  left: 0;
-  bottom: 0; */
   width: 100%;
-  padding: var(--paddingSuperSmall);
+  padding: var(--SuperSmall);
   text-align: center;
   font-size: 24px;
   background-color: var(--veryDarkTurquiose);
@@ -116,11 +103,11 @@ body {
 
 .Navbar-link {
   display: block;
-  padding: var(--paddingMedium);
+  padding: var(--Normal);
   cursor: pointer;
   font-size: 40px;
   color: var(--white);
-  transition: 0.2s;
+  transition: var(--transition-duration-Short);
 }
 
 .Navbar-link:hover {
@@ -128,7 +115,7 @@ body {
 }
 
 .Home-title {
-  margin-bottom: var(--marginBig);
+  margin-bottom: var(--Big);
 }
 
 .Home-text {
@@ -140,7 +127,7 @@ body {
 .Home-text-highlight {
   font-weight: 700;
   color: var(--darkTurquiose);
-  margin: 0 var(--marginSuperSmall);
+  margin: 0 var(--SuperSmall);
 }
 
 .Home-console-underscore {
@@ -179,7 +166,7 @@ body {
   border-right: 3px solid var(--black);
   background-color: var(--darkTurquiose);
   color: var(--white);
-  transition: 0.4s ease-in-out;
+  transition: var(--transition-duration-Long) ease-in-out;
   cursor: pointer;
 }
 
@@ -198,9 +185,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  height: 100%;
   text-align: center;
-  background-color: #fff;
-  transition: 0.4s 0.2s;
+  transition: var(--transition-duration-Long);
   opacity: 0;
 }
 
@@ -208,17 +195,33 @@ body {
   opacity: 1;
 }
 
-.Project-detail-image-box img {
-  max-width: 500px;
+.Project-detail-title {
+  margin-top: var(--Big);
+  font-weight: bold;
+  font-size: 34px;
 }
 
-.Knowledge {
-  /* display: flex;
+.Project-detail-image-box img {
+  width: 70%;
+  margin: var(--Big) 0;
+}
+
+.Project-detail-links {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%; */
+}
+
+.Project-detail-link {
+  display: flex;
+  margin: var(--Small);
+  font-size: 24px;
+}
+
+.Project-detail-link a {
+  margin-left: 20px;
+  color: var(--darkTurquiose);
+  text-decoration: none;
 }
 
 .Knowledge ul {
@@ -230,8 +233,8 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--paddingSuperSmall) var(--paddingSmall);
-  margin: var(--marginSmall);
+  padding: var(--SuperSmall) var(--Small);
+  margin: var(--Small);
   font-size: 40px;
   text-shadow: 2px 2px 0 var(--textOutlineColor),
     2px -2px 0 var(--textOutlineColor), -2px 2px 0 var(--textOutlineColor),
@@ -241,19 +244,11 @@ body {
   color: var(--grey);
   border-radius: var(--radiusSmall);
   user-select: none;
-  transition: 0.3s;
-}
-
-.Contact {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%; */
+  transition: var(--transition-duration-Long);
 }
 
 .Flower {
-  margin-right: var(--marginBig);
+  margin-right: var(--Big);
 }
 
 .petal {
@@ -329,12 +324,7 @@ body {
 }
 
 .center {
-  display: block;
   position: relative;
-  /* width: 5px;
-  height: 5px;
-  background-color: var(--darkTurquiose);
-  border-radius: 50%; */
 }
 
 @keyframes spin {
@@ -348,7 +338,7 @@ body {
 
 .Contact-title {
   font-size: 28px;
-  margin-bottom: var(--marginBig);
+  margin-bottom: var(--Big);
 }
 
 .Contact-text {
@@ -360,11 +350,11 @@ body {
 .Contact-text ul {
   list-style: none;
   text-align: left;
-  margin-top: var(--marginMedium);
+  margin-top: var(--Medium);
 }
 
 .Contact-text ul li {
-  margin-top: var(--marginSmall);
+  margin-top: var(--Small);
 }
 
 .Contact-text ul li a {
@@ -375,7 +365,7 @@ body {
 .Contact-text-highlight {
   font-weight: 700;
   color: var(--darkTurquiose);
-  margin: 0 var(--marginSuperSmall);
+  margin: 0 var(--SuperSmall);
 }
 
 .Contact-item {
@@ -387,5 +377,5 @@ body {
 .Contact-goodbye {
   text-align: center;
   font-size: 26px;
-  margin-top: var(--marginBig);
+  margin-top: var(--Big);
 }

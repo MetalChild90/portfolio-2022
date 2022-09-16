@@ -9,10 +9,10 @@ function Home() {
         <Cursor />
       </h1>
       <div className="Home-text">
-        <p>And currenty I'm looking for my first job in web development.</p>
+        <p>And currently I'm looking for my first job in web development.</p>
         <p>
-          Althout I don't have any commercial experience yet things which make
-          me a valable employee is that
+          Although I don't have any commercial experience yet things that make
+          me a valuable employee is that
           <span className="Home-text-highlight">
             I'm fluent in English (writing, speaking, reading)
           </span>{" "}
