@@ -32,8 +32,6 @@ function Content() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/knowledge" element={<Knowledge />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/notfound" element={<NotFound />} />
-            <Route path="/*" element={<NotFound />} />
           </Routes>
         </main>
       </div>
