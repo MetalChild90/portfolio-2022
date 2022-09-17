@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
 import Bookmark from "./Bookmark";
-// import projects from "../data/projectsData";
 
 function BookmarksList() {
   const { projects } = useContext(AppContext);

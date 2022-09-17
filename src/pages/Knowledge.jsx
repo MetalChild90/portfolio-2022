@@ -14,7 +14,7 @@ function Knowledge() {
   ];
 
   return (
-    <div className="Knowledge">
+    <div className="Knowledge inner-wrapper">
       <ul>
         {technologies.map((technology, i) => (
           <Technology key={i} technology={technology} i={i} />

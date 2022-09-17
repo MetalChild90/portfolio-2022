@@ -11,12 +11,20 @@ import { useContext } from "react";
 import AppContext from "./context/AppContext";
 
 function Content() {
-  const { wrapperHeight } = useContext(AppContext);
+  const { wrapperHeight, contentWidth, orientation } = useContext(AppContext);
 
   return (
     <>
       <Header />
-      <div className="wrapper" style={{ height: `${wrapperHeight}px` }}>
+      <div
+        className="wrapper"
+        style={{
+          height:
+            contentWidth < 700 && orientation === "landscape"
+              ? "auto"
+              : `${wrapperHeight}px`,
+        }}
+      >
         <Navbar />
         <main className="content-wrapper">
           <Routes>

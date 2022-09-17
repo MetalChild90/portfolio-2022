@@ -6,7 +6,7 @@ function ProjectDisplay() {
   return (
     activeBookmark !== null && (
       <div
-        className={`Project-detail-wrapper ${
+        className={`Project-detail-wrapper inner-wrapper ${
           activeBookmark !== null && "Project-detail-visible"
         }`}
         style={{

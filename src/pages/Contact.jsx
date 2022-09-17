@@ -7,7 +7,7 @@ function Contact() {
         Thank you for taking the time to check out my portfolio!
       </h3>
       <div className="Contact-text">
-        <p>If you are interested in hiring me, you can contact me through:</p>
+        <p>If you are interested in hiring me, contact me through:</p>
         <ul>
           <li className=" Contact-item Contact-text-highlight">
             <Flower />

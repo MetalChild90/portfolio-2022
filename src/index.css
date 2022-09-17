@@ -39,7 +39,6 @@ body {
 .wrapper {
   display: flex;
   align-items: flex-start;
-  height: calc(100vh - 99px);
   max-width: 1200px;
   margin: 0 auto;
   border-left: 2px solid var(--veryDarkTurquiose);
@@ -50,24 +49,23 @@ body {
 
 .content-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 .inner-wrapper {
-  max-width: 800px;
+  width: 70%;
   margin: 0 auto;
 }
 
 .Header {
   width: 100%;
   margin: 0 auto;
+  font-size: 16px;
   padding: var(--Small);
   text-align: center;
-  font-size: 25px;
   font-weight: 500;
   color: var(--white);
   background-color: var(--veryDarkTurquiose);
@@ -78,7 +76,6 @@ body {
   width: 100%;
   padding: var(--SuperSmall);
   text-align: center;
-  font-size: 24px;
   background-color: var(--veryDarkTurquiose);
   font-family: "Dancing Script", cursive;
   color: var(--white);
@@ -103,9 +100,9 @@ body {
 
 .Navbar-link {
   display: block;
-  padding: var(--Normal);
   cursor: pointer;
-  font-size: 40px;
+  padding: var(--SuperSmall);
+  font-size: 30px;
   color: var(--white);
   transition: var(--transition-duration-Short);
 }
@@ -115,11 +112,13 @@ body {
 }
 
 .Home-title {
-  margin-bottom: var(--Big);
+  font-size: 20px;
+  margin-bottom: var(--Medium);
+  margin-top: var(--Medium);
 }
 
 .Home-text {
-  font-size: 25px;
+  font-size: 15px;
   line-height: 2;
   text-align: justify;
 }
@@ -150,8 +149,6 @@ body {
 
 .Bookmarks-wrapper {
   display: flex;
-  align-self: flex-start;
-  z-index: 1;
 }
 
 .Bookmarks-wrapper:nth-child(1) {
@@ -162,17 +159,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
+  width: 25px;
   border-right: 3px solid var(--black);
   background-color: var(--darkTurquiose);
   color: var(--white);
+  z-index: 1;
   transition: var(--transition-duration-Long) ease-in-out;
   cursor: pointer;
 }
 
 .Bookmark-text {
   text-align: center;
-  font-size: 24px;
+  font-size: 16px;
   min-width: 400px;
   transform: rotate(-90deg);
 }
@@ -198,12 +196,11 @@ body {
 .Project-detail-title {
   margin-top: var(--Big);
   font-weight: bold;
-  font-size: 34px;
 }
 
 .Project-detail-image-box img {
-  width: 70%;
   margin: var(--Big) 0;
+  width: 70%;
 }
 
 .Project-detail-links {
@@ -215,7 +212,6 @@ body {
 .Project-detail-link {
   display: flex;
   margin: var(--Small);
-  font-size: 24px;
 }
 
 .Project-detail-link a {
@@ -235,7 +231,7 @@ body {
   text-align: center;
   padding: var(--SuperSmall) var(--Small);
   margin: var(--Small);
-  font-size: 40px;
+  font-size: 30px;
   text-shadow: 2px 2px 0 var(--textOutlineColor),
     2px -2px 0 var(--textOutlineColor), -2px 2px 0 var(--textOutlineColor),
     -2px -2px 0 var(--textOutlineColor), 2px 0px 0 var(--textOutlineColor),
@@ -336,21 +332,24 @@ body {
   }
 }
 
+.Contact {
+  text-align: center;
+}
+
 .Contact-title {
-  font-size: 28px;
-  margin-bottom: var(--Big);
+  line-height: 2;
+  margin-bottom: var(--Medium);
 }
 
 .Contact-text {
-  font-size: 25px;
-  line-height: 2;
-  margin: 80px 0;
+  font-size: 15px;
+  margin: var(--Small) 0;
 }
 
 .Contact-text ul {
   list-style: none;
   text-align: left;
-  margin-top: var(--Medium);
+  margin-top: var(--Big);
 }
 
 .Contact-text ul li {
@@ -372,10 +371,116 @@ body {
   display: flex;
   align-items: center;
   margin-left: 15px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .Contact-goodbye {
-  text-align: center;
-  font-size: 26px;
   margin-top: var(--Big);
+}
+
+@media only screen and (min-width: 768px) {
+  .Bookmark {
+    width: 50px;
+  }
+
+  .content-wrapper,
+  .Header,
+  .Footer,
+  .Home-text,
+  .Bookmark-text,
+  .Project-detail-,
+  .Contact-text,
+  .Contact-goodbye {
+    font-size: 25px;
+  }
+
+  .Home-title {
+    font-size: 25px;
+    margin-bottom: var(--Big);
+  }
+
+  .Navbar-link {
+    padding: var(--Normal);
+    font-size: 40px;
+  }
+
+  .Project-detail-title {
+    font-size: 34px;
+  }
+
+  .Knowledge-item {
+    font-size: 40px;
+  }
+
+  .Contact-title {
+    font-size: 26px;
+  }
+
+  .Contact-title {
+    margin-bottom: var(--Big);
+  }
+
+  .Contact-text {
+    font-size: 20px;
+    line-height: 2;
+    margin: 80px 0;
+  }
+}
+
+@media only screen and (max-width: 800px) and (orientation: landscape) {
+  .Navbar-link {
+    padding: var(--SuperSmall);
+    font-size: 30px;
+  }
+
+  .Project-detail-title {
+    margin-top: var(--Small);
+    margin-bottom: var(--Small);
+    font-size: 16px;
+  }
+
+  .Project-detail-image-box img {
+    margin: 0;
+    width: 50%;
+  }
+
+  .Project-detail-links {
+    flex-direction: row;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .Footer,
+  .Header,
+  .Bookmark-text {
+    font-size: 16px;
+  }
+
+  .Navbar {
+    height: 100vh;
+  }
+
+  .Knowledge-item {
+    font-size: 16px;
+  }
+
+  .inner-wrapper {
+    margin-top: 15vh;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .Home-title {
+    font-size: 35px;
+  }
+
+  .Project-detail-title {
+    font-size: 25px;
+  }
+
+  .Project-detail-image-box img {
+    margin: var(--Normal) 0;
+    width: 70%;
+  }
 }
