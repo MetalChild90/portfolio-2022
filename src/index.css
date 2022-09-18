@@ -38,12 +38,11 @@ body {
 
 .wrapper {
   display: flex;
-  align-items: flex-start;
   max-width: 1200px;
+  height: 100vh;
   margin: 0 auto;
   border-left: 2px solid var(--veryDarkTurquiose);
   border-right: 2px solid var(--veryDarkTurquiose);
-  overflow: hidden;
   background-color: var(--grey);
 }
 
@@ -58,9 +57,13 @@ body {
 .inner-wrapper {
   width: 70%;
   margin: 0 auto;
+  /* background-color: greenyellow; */
 }
 
 .Header {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   margin: 0 auto;
   font-size: 16px;
@@ -70,22 +73,27 @@ body {
   color: var(--white);
   background-color: var(--veryDarkTurquiose);
   font-style: italic;
+  z-index: 2;
 }
 
 .Footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   padding: var(--SuperSmall);
   text-align: center;
   background-color: var(--veryDarkTurquiose);
   font-family: "Dancing Script", cursive;
   color: var(--white);
+  z-index: 2;
 }
 
 .Navbar {
   display: flex;
   justify-content: center;
   background-color: var(--darkTurquiose);
-  height: 100%;
+  height: 100vh;
 }
 
 .Navbar ul {
@@ -158,14 +166,15 @@ body {
 .Bookmark {
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 25px;
-  border-right: 3px solid var(--black);
+  height: 100vh;
+  align-items: center;
   background-color: var(--darkTurquiose);
   color: var(--white);
-  z-index: 1;
   transition: var(--transition-duration-Long) ease-in-out;
   cursor: pointer;
+  z-index: 1;
+  /* zeby byc nad obrazkiem */
 }
 
 .Bookmark-text {
@@ -183,7 +192,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
   height: 100%;
+  width: 100%;
   text-align: center;
   transition: var(--transition-duration-Long);
   opacity: 0;
@@ -194,8 +206,8 @@ body {
 }
 
 .Project-detail-title {
-  margin-top: var(--Big);
   font-weight: bold;
+  font-size: 16px;
 }
 
 .Project-detail-image-box img {
@@ -207,6 +219,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 16px;
 }
 
 .Project-detail-link {
@@ -225,13 +238,13 @@ body {
 }
 
 .Knowledge-item {
+  font-size: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: var(--SuperSmall) var(--Small);
-  margin: var(--Small);
-  font-size: 30px;
+  margin-top: var(--Small);
   text-shadow: 2px 2px 0 var(--textOutlineColor),
     2px -2px 0 var(--textOutlineColor), -2px 2px 0 var(--textOutlineColor),
     -2px -2px 0 var(--textOutlineColor), 2px 0px 0 var(--textOutlineColor),
@@ -244,7 +257,7 @@ body {
 }
 
 .Flower {
-  margin-right: var(--Big);
+  margin-right: var(--Normal);
 }
 
 .petal {
@@ -252,8 +265,8 @@ body {
   top: 110%;
   left: 5px;
   display: block;
-  height: 24px;
-  width: 3px;
+  height: 16px;
+  width: 2px;
   background-color: var(--darkTurquiose);
   border-radius: 50%;
   transform-origin: 45% -9%;
@@ -334,6 +347,7 @@ body {
 
 .Contact {
   text-align: center;
+  font-size: 15px;
 }
 
 .Contact-title {
@@ -342,7 +356,6 @@ body {
 }
 
 .Contact-text {
-  font-size: 15px;
   margin: var(--Small) 0;
 }
 
@@ -353,6 +366,7 @@ body {
 }
 
 .Contact-text ul li {
+  font-size: 12px;
   margin-top: var(--Small);
 }
 
@@ -379,6 +393,59 @@ body {
   margin-top: var(--Big);
 }
 
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  .Home-title {
+    margin: 0 0 var(--Small) 0;
+  }
+
+  .Navbar-link {
+    padding: var(--SuperSmall);
+    font-size: 30px;
+  }
+
+  .Project-detail-title {
+    margin-top: var(--Small);
+    margin-bottom: var(--Small);
+  }
+
+  .Project-detail-image-box img {
+    margin: 0;
+    width: 50%;
+  }
+
+  .Project-detail-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .Footer,
+  .Header,
+  .Bookmark-text {
+    font-size: 16px;
+  }
+
+  .inner-wrapper {
+    margin-top: 3vh;
+    width: 90%;
+  }
+
+  .Knowledge-item {
+    font-size: 16px;
+  }
+
+  .Contact-title {
+    margin-bottom: var(--Small);
+  }
+
+  .Contact-text ul {
+    margin-top: var(--Small);
+  }
+
+  .Contact-goodbye {
+    margin-top: var(--Small);
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .Bookmark {
     width: 50px;
@@ -396,7 +463,7 @@ body {
   }
 
   .Home-title {
-    font-size: 25px;
+    font-size: 35px;
     margin-bottom: var(--Big);
   }
 
@@ -406,81 +473,55 @@ body {
   }
 
   .Project-detail-title {
-    font-size: 34px;
-  }
-
-  .Knowledge-item {
-    font-size: 40px;
-  }
-
-  .Contact-title {
-    font-size: 26px;
-  }
-
-  .Contact-title {
-    margin-bottom: var(--Big);
-  }
-
-  .Contact-text {
-    font-size: 20px;
-    line-height: 2;
-    margin: 80px 0;
-  }
-}
-
-@media only screen and (max-width: 800px) and (orientation: landscape) {
-  .Navbar-link {
-    padding: var(--SuperSmall);
-    font-size: 30px;
-  }
-
-  .Project-detail-title {
-    margin-top: var(--Small);
-    margin-bottom: var(--Small);
-    font-size: 16px;
-  }
-
-  .Project-detail-image-box img {
-    margin: 0;
-    width: 50%;
-  }
-
-  .Project-detail-links {
-    flex-direction: row;
-    justify-content: center;
-    font-size: 16px;
-  }
-
-  .Footer,
-  .Header,
-  .Bookmark-text {
-    font-size: 16px;
-  }
-
-  .Navbar {
-    height: 100vh;
-  }
-
-  .Knowledge-item {
-    font-size: 16px;
-  }
-
-  .inner-wrapper {
-    margin-top: 15vh;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .Home-title {
     font-size: 35px;
-  }
-
-  .Project-detail-title {
-    font-size: 25px;
+    margin-bottom: var(--Medium);
   }
 
   .Project-detail-image-box img {
     margin: var(--Normal) 0;
     width: 70%;
+  }
+
+  .Project-detail-links {
+    font-size: 24px;
+  }
+
+  .Knowledge-item {
+    font-size: 40px;
+    margin: var(--Small);
+  }
+
+  .Flower {
+    margin-right: var(--Big);
+  }
+
+  .petal {
+    height: 24px;
+    width: 3px;
+  }
+
+  .Contact-title {
+    font-size: 35px;
+    margin-bottom: var(--Big);
+  }
+
+  .Contact-text {
+    line-height: 2;
+    margin: 80px 0;
+  }
+
+  .Contact-text ul li {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+  .Project-detail-title {
+    font-size: 30px;
+    margin-bottom: var(--Normal);
+  }
+
+  .Project-detail-links {
+    font-size: 24px;
   }
 }

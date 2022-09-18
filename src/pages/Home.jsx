@@ -11,12 +11,9 @@ function Home() {
       <div className="Home-text">
         <p>And currently I'm looking for my first job in web development.</p>
         <p>
-          Although I don't have any commercial experience yet things that make
-          me a valuable employee is that
-          <span className="Home-text-highlight">
-            I'm fluent in English (writing, speaking, reading)
-          </span>{" "}
-          and
+          Although I don't have commercial experience, what makes me a valuable
+          employee is that
+          <span className="Home-text-highlight">I'm fluent in English</span> and
           <span className="Home-text-highlight">
             I'm willing to sacrifice my time and effort to become as best
             developer as I can be.

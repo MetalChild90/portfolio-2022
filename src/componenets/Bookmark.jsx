@@ -38,7 +38,7 @@ function Bookmark({ project }) {
         transform: project.bookmarkMoved ? translateVar : "translateX(0px)",
         borderLeft: project.bookmarkMoved ? "3px solid var(--black)" : "none",
         borderRight: project.bookmarkMoved ? "none" : "3px solid var(--black)",
-        height: orientation === "landscape" ? "100vh" : `${wrapperHeight}px`,
+        // height: orientation === "landscape" ? "100vh" : `${wrapperHeight}px`,
       }}
       onClick={handleClick}
     >

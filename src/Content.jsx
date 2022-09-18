@@ -5,7 +5,7 @@ import Navbar from "./componenets/Navbar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Knowledge from "./pages/Knowledge";
-import NotFound from "./pages/NotFound";
+// import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import { useContext } from "react";
 import AppContext from "./context/AppContext";
@@ -18,12 +18,12 @@ function Content() {
       <Header />
       <div
         className="wrapper"
-        style={{
-          height:
-            contentWidth < 700 && orientation === "landscape"
-              ? "auto"
-              : `${wrapperHeight}px`,
-        }}
+        // style={{
+        //   height:
+        //     contentWidth < 700 && orientation === "landscape"
+        //       ? "auto"
+        //       : `${wrapperHeight}px`,
+        // }}
       >
         <Navbar />
         <main className="content-wrapper">

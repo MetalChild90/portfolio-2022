@@ -32,7 +32,7 @@ function ProjectDisplay() {
           </div>
           <div className="Project-detail-links">
             <div className="Project-detail-link">
-              <p>Live: </p>
+              <p>Website: </p>
               <a href="http://github.com">http://github.com</a>
             </div>
             <div className="Project-detail-link">
