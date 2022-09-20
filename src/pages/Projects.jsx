@@ -9,10 +9,11 @@ function Projects() {
   const projectsRef = useRef(null);
 
   const updateDimensions = useCallback(() => {
-    if (projectsRef.current) setProjectsWidth(projectsRef.current.offsetWidth);
+    setProjectsWidth(projectsRef.current.offsetWidth);
   }, [setProjectsWidth]);
 
   useEffect(() => {
+    updateDimensions();
     window.addEventListener("resize", updateDimensions);
     setProjectsWidth(projectsRef.current.offsetWidth);
     return () => {

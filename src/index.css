@@ -57,7 +57,6 @@ body {
 .inner-wrapper {
   width: 70%;
   margin: 0 auto;
-  /* background-color: greenyellow; */
 }
 
 .Header {
@@ -65,15 +64,17 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  margin: 0 auto;
-  font-size: 16px;
   padding: var(--Small);
   text-align: center;
   font-weight: 500;
-  color: var(--white);
-  background-color: var(--veryDarkTurquiose);
   font-style: italic;
+  background-color: var(--veryDarkTurquiose);
+  color: var(--white);
   z-index: 2;
+}
+
+.Header h1 {
+  font-size: 16px;
 }
 
 .Footer {
@@ -83,17 +84,16 @@ body {
   width: 100%;
   padding: var(--SuperSmall);
   text-align: center;
-  background-color: var(--veryDarkTurquiose);
   font-family: "Dancing Script", cursive;
+  background-color: var(--veryDarkTurquiose);
   color: var(--white);
   z-index: 2;
 }
 
 .Navbar {
   display: flex;
-  justify-content: center;
-  background-color: var(--darkTurquiose);
   height: 100vh;
+  background-color: var(--darkTurquiose);
 }
 
 .Navbar ul {
@@ -108,11 +108,11 @@ body {
 
 .Navbar-link {
   display: block;
-  cursor: pointer;
   padding: var(--SuperSmall);
   font-size: 30px;
   color: var(--white);
   transition: var(--transition-duration-Short);
+  cursor: pointer;
 }
 
 .Navbar-link:hover {
@@ -126,15 +126,15 @@ body {
 }
 
 .Home-text {
+  text-align: justify;
   font-size: 15px;
   line-height: 2;
-  text-align: justify;
 }
 
-.Home-text-highlight {
+.text-highlight {
+  margin: 0 var(--SuperSmall);
   font-weight: 700;
   color: var(--darkTurquiose);
-  margin: 0 var(--SuperSmall);
 }
 
 .Home-console-underscore {
@@ -149,8 +149,8 @@ body {
 }
 
 .Projects {
-  position: relative;
   display: flex;
+  position: relative;
   height: 100%;
   width: 100%;
 }
@@ -166,21 +166,19 @@ body {
 .Bookmark {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 25px;
   height: 100vh;
-  align-items: center;
   background-color: var(--darkTurquiose);
   color: var(--white);
   transition: var(--transition-duration-Long) ease-in-out;
   cursor: pointer;
   z-index: 1;
-  /* zeby byc nad obrazkiem */
 }
 
 .Bookmark-text {
-  text-align: center;
-  font-size: 16px;
   min-width: 400px;
+  text-align: center;
   transform: rotate(-90deg);
 }
 
@@ -189,15 +187,14 @@ body {
 }
 
 .Project-detail-wrapper {
+  display: flex;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
   height: 100%;
   width: 100%;
   text-align: center;
-  transition: var(--transition-duration-Long);
   opacity: 0;
 }
 
@@ -205,13 +202,9 @@ body {
   opacity: 1;
 }
 
-.Project-detail-title {
-  font-weight: bold;
-  font-size: 16px;
-}
-
 .Project-detail-image-box img {
   margin: var(--Big) 0;
+  border-radius: var(--radiusSmall);
   width: 70%;
 }
 
@@ -219,7 +212,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 16px;
 }
 
 .Project-detail-link {
@@ -238,20 +230,15 @@ body {
 }
 
 .Knowledge-item {
-  font-size: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   padding: var(--SuperSmall) var(--Small);
   margin-top: var(--Small);
-  text-shadow: 2px 2px 0 var(--textOutlineColor),
-    2px -2px 0 var(--textOutlineColor), -2px 2px 0 var(--textOutlineColor),
-    -2px -2px 0 var(--textOutlineColor), 2px 0px 0 var(--textOutlineColor),
-    0px 2px 0 var(--textOutlineColor), -2px 0px 0 var(--textOutlineColor),
-    0px -2px 0 var(--textOutlineColor);
-  color: var(--grey);
+  color: var(--black);
   border-radius: var(--radiusSmall);
+  text-align: center;
+  font-size: 24px;
   user-select: none;
   transition: var(--transition-duration-Long);
 }
@@ -261,74 +248,59 @@ body {
 }
 
 .petal {
+  display: block;
   position: absolute;
   top: 110%;
   left: 5px;
-  display: block;
   height: 16px;
   width: 2px;
-  background-color: var(--darkTurquiose);
   border-radius: 50%;
+  background-color: var(--darkTurquiose);
   transform-origin: 45% -9%;
   animation: spin 60s linear infinite;
 }
 
-.petal:nth-child(1) {
-  transform: rotate(0deg);
-}
-
 .petal:nth-child(2) {
-  transform: rotate(30deg);
   animation-delay: -5s;
 }
 
 .petal:nth-child(3) {
-  transform: rotate(60deg);
   animation-delay: -10s;
 }
 
 .petal:nth-child(4) {
-  transform: rotate(90deg);
   animation-delay: -15s;
 }
 
 .petal:nth-child(5) {
-  transform: rotate(120deg);
   animation-delay: -20s;
 }
 
 .petal:nth-child(6) {
-  transform: rotate(150deg);
   animation-delay: -25s;
 }
 
 .petal:nth-child(7) {
-  transform: rotate(180deg);
   animation-delay: -30s;
 }
 
 .petal:nth-child(8) {
-  transform: rotate(210deg);
   animation-delay: -35s;
 }
 
 .petal:nth-child(9) {
-  transform: rotate(240deg);
   animation-delay: -40s;
 }
 
 .petal:nth-child(10) {
-  transform: rotate(270deg);
   animation-delay: -45s;
 }
 
 .petal:nth-child(11) {
-  transform: rotate(300deg);
   animation-delay: -50s;
 }
 
 .petal:nth-child(12) {
-  transform: rotate(330deg);
   animation-delay: -55s;
 }
 
@@ -351,8 +323,8 @@ body {
 }
 
 .Contact-title {
-  line-height: 2;
   margin-bottom: var(--Medium);
+  line-height: 2;
 }
 
 .Contact-text {
@@ -360,25 +332,19 @@ body {
 }
 
 .Contact-text ul {
+  margin-top: var(--Big);
   list-style: none;
   text-align: left;
-  margin-top: var(--Big);
 }
 
 .Contact-text ul li {
-  font-size: 12px;
   margin-top: var(--Small);
+  font-size: 12px;
 }
 
 .Contact-text ul li a {
   text-decoration: none;
   margin: 0;
-}
-
-.Contact-text-highlight {
-  font-weight: 700;
-  color: var(--darkTurquiose);
-  margin: 0 var(--SuperSmall);
 }
 
 .Contact-item {
@@ -409,19 +375,13 @@ body {
   }
 
   .Project-detail-image-box img {
-    margin: 0;
     width: 50%;
+    margin: 0;
   }
 
   .Project-detail-links {
     flex-direction: row;
     justify-content: center;
-  }
-
-  .Footer,
-  .Header,
-  .Bookmark-text {
-    font-size: 16px;
   }
 
   .inner-wrapper {
@@ -452,29 +412,27 @@ body {
   }
 
   .content-wrapper,
-  .Header,
+  .Header h1,
   .Footer,
   .Home-text,
   .Bookmark-text,
   .Project-detail-,
   .Contact-text,
+  .Contact-text ul li,
   .Contact-goodbye {
     font-size: 25px;
   }
 
-  .Home-title {
-    font-size: 35px;
+  .Home-title,
+  .Project-detail-title,
+  .Contact-title {
     margin-bottom: var(--Big);
+    font-size: 35px;
   }
 
   .Navbar-link {
     padding: var(--Normal);
     font-size: 40px;
-  }
-
-  .Project-detail-title {
-    font-size: 35px;
-    margin-bottom: var(--Medium);
   }
 
   .Project-detail-image-box img {
@@ -487,8 +445,14 @@ body {
   }
 
   .Knowledge-item {
-    font-size: 40px;
     margin: var(--Small);
+    font-size: 40px;
+    text-shadow: 2px 2px 0 var(--textOutlineColor),
+      2px -2px 0 var(--textOutlineColor), -2px 2px 0 var(--textOutlineColor),
+      -2px -2px 0 var(--textOutlineColor), 2px 0px 0 var(--textOutlineColor),
+      0px 2px 0 var(--textOutlineColor), -2px 0px 0 var(--textOutlineColor),
+      0px -2px 0 var(--textOutlineColor);
+    color: var(--grey);
   }
 
   .Flower {
@@ -500,25 +464,16 @@ body {
     width: 3px;
   }
 
-  .Contact-title {
-    font-size: 35px;
-    margin-bottom: var(--Big);
-  }
-
   .Contact-text {
-    line-height: 2;
     margin: 80px 0;
-  }
-
-  .Contact-text ul li {
-    font-size: 25px;
+    line-height: 2;
   }
 }
 
 @media only screen and (min-width: 768px) and (orientation: landscape) {
   .Project-detail-title {
-    font-size: 30px;
     margin-bottom: var(--Normal);
+    font-size: 30px;
   }
 
   .Project-detail-links {

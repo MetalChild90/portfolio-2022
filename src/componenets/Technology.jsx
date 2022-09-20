@@ -1,15 +1,8 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
+import useToggle from "../hooks/useToggle";
 
 function Technology({ technology, i }) {
-  const [hovered, setHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setHovered((prevState) => !prevState);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered((prevState) => !prevState);
-  };
+  const [hovered, toggleHovered] = useToggle(false);
 
   const textColor = (chosenColor) => `2px 2px 0 ${chosenColor},
     2px -2px 0 ${chosenColor}, -2px 2px 0 ${chosenColor},
@@ -21,8 +14,8 @@ function Technology({ technology, i }) {
     <li
       key={i}
       className="Knowledge-item"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={toggleHovered}
+      onMouseLeave={toggleHovered}
       style={{
         textShadow: hovered ? textColor(technology.color) : "",
         backgroundColor: hovered ? technology.bgColor : "",
@@ -32,5 +25,10 @@ function Technology({ technology, i }) {
     </li>
   );
 }
+
+Technology.propTypes = {
+  technology: PropTypes.object.isRequired,
+  i: PropTypes.number.isRequired,
+};
 
 export default Technology;

@@ -13,8 +13,8 @@ function Home() {
         <p>
           Although I don't have commercial experience, what makes me a valuable
           employee is that
-          <span className="Home-text-highlight">I'm fluent in English</span> and
-          <span className="Home-text-highlight">
+          <span className="text-highlight">I'm fluent in English</span> and
+          <span className="text-highlight">
             I'm willing to sacrifice my time and effort to become as best
             developer as I can be.
           </span>

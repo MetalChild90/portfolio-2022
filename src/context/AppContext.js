@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, useCallback } from "react";
+import { createContext, useEffect, useState } from "react";
 import beachImage from "../images/beach.png";
 import trackerImage from "../images/tracker.png";
 
@@ -8,9 +8,6 @@ export const Provider = ({ children }) => {
   const [projectsWidth, setProjectsWidth] = useState(0);
   const [bookmarkWidth, setBookmarkWidth] = useState(0);
   const [contentWidth, setContentWidth] = useState(0);
-  const [headerHeight, setHeaderHeight] = useState(0);
-  const [footerHeight, setFooterHeight] = useState(0);
-  const [wrapperHeight, setWrapperHeight] = useState(0);
   const [activeBookmark, setActiveBookmark] = useState(null);
   const [projects, setProjects] = useState([
     {
@@ -42,19 +39,6 @@ export const Provider = ({ children }) => {
   useEffect(() => {
     setContentWidth(projectsWidth - bookmarkWidth * 3);
   }, [projectsWidth, bookmarkWidth]);
-
-  const updateWrapperHeight = useCallback(() => {
-    setWrapperHeight(window.innerHeight - headerHeight - footerHeight);
-  }, [setWrapperHeight, footerHeight, headerHeight]);
-
-  useEffect(() => {
-    window.addEventListener("resize", updateWrapperHeight);
-    setWrapperHeight(window.innerHeight - headerHeight - footerHeight);
-    return () => {
-      console.log("dismount");
-      window.removeEventListener("resize", updateWrapperHeight);
-    };
-  }, [setWrapperHeight, footerHeight, headerHeight, updateWrapperHeight]);
 
   useEffect(() => {
     if (activeBookmark === 2) {
@@ -99,42 +83,16 @@ export const Provider = ({ children }) => {
     // eslint-disable-next-line
   }, [activeBookmark]);
 
-  const isLandscape = () =>
-      window.matchMedia("(orientation:landscape)").matches,
-    [orientation, setOrientation] = useState(
-      isLandscape() ? "landscape" : "portrait"
-    ),
-    onWindowResize = useCallback(() => {
-      clearTimeout(window.resizeLag);
-      window.resizeLag = setTimeout(() => {
-        delete window.resizeLag;
-        setOrientation(isLandscape() ? "landscape" : "portrait");
-      }, 200);
-    }, []);
-
-  useEffect(
-    () => (
-      onWindowResize(),
-      window.addEventListener("resize", onWindowResize),
-      () => window.removeEventListener("resize", onWindowResize)
-    ),
-    [onWindowResize]
-  );
-
   return (
     <AppContext.Provider
       value={{
         projects,
-        orientation,
         contentWidth,
         bookmarkWidth,
         setBookmarkWidth,
         setProjectsWidth,
         activeBookmark,
         setActiveBookmark,
-        setFooterHeight,
-        wrapperHeight,
-        setHeaderHeight,
       }}
     >
       {children}

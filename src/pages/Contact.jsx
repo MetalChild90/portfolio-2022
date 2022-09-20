@@ -9,14 +9,14 @@ function Contact() {
       <div className="Contact-text">
         <p>If you are interested in hiring me, contact me through:</p>
         <ul>
-          <li className=" Contact-item Contact-text-highlight">
+          <li className=" Contact-item text-highlight">
             <Flower />
             metalchild90@gmail.com
           </li>
           <li className="Contact-item">
             <Flower />
             <a
-              className="Contact-text-highlight"
+              className="text-highlight"
               href="https://facebook.com/EihnarenNemezisEnavirienne"
             >
               https://facebook.com/EihnarenNemezisEnavirienne

@@ -1,28 +1,32 @@
-import { useContext, useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import { useContext, useState, useEffect, useRef, useCallback } from "react";
 import AppContext from "../context/AppContext";
 
-function Bookmark({ project }) {
-  const {
-    contentWidth,
-    setActiveBookmark,
-    activeBookmark,
-    setBookmarkWidth,
-    wrapperHeight,
-    orientation,
-  } = useContext(AppContext);
+function Bookmark({ project: { id, title, bookmarkMoved } }) {
+  const { contentWidth, setActiveBookmark, activeBookmark, setBookmarkWidth } =
+    useContext(AppContext);
   const [translateVar, setTranslateVar] = useState("");
 
   const bookmarkRef = useRef(0);
 
-  useEffect(() => {
+  const updateDimensions = useCallback(() => {
     setBookmarkWidth(bookmarkRef.current.offsetWidth);
   }, [setBookmarkWidth]);
 
+  useEffect(() => {
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    setBookmarkWidth(bookmarkRef.current.offsetWidth);
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+    };
+  }, [setBookmarkWidth, updateDimensions]);
+
   const handleClick = () => {
-    if (activeBookmark === 2 && project.id === 2) {
+    if (activeBookmark === 2 && id === 2) {
       setActiveBookmark(null);
     } else {
-      setActiveBookmark(project.id);
+      setActiveBookmark(id);
     }
   };
 
@@ -35,16 +39,21 @@ function Bookmark({ project }) {
       ref={bookmarkRef}
       className="Bookmark"
       style={{
-        transform: project.bookmarkMoved ? translateVar : "translateX(0px)",
-        borderLeft: project.bookmarkMoved ? "3px solid var(--black)" : "none",
-        borderRight: project.bookmarkMoved ? "none" : "3px solid var(--black)",
-        // height: orientation === "landscape" ? "100vh" : `${wrapperHeight}px`,
+        transform: bookmarkMoved ? translateVar : "translateX(0px)",
+        borderLeft: bookmarkMoved ? "3px solid var(--black)" : "none",
+        borderRight: bookmarkMoved ? "none" : "3px solid var(--black)",
       }}
       onClick={handleClick}
     >
-      <div className="Bookmark-text">{project.title}</div>
+      <div className="Bookmark-text">{title}</div>
     </div>
   );
 }
+
+Bookmark.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  bookmarkMoved: PropTypes.bool.isRequired,
+};
 
 export default Bookmark;

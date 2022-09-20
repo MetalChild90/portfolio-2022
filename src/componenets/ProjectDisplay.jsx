@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
+
 function ProjectDisplay() {
   const { projects, activeBookmark, contentWidth, bookmarkWidth } =
     useContext(AppContext);
@@ -22,7 +23,7 @@ function ProjectDisplay() {
       >
         <div>
           <div className="Project-detail-title">
-            <p>{projects[activeBookmark].title}</p>
+            <h3>{projects[activeBookmark].title}</h3>
           </div>
           <div className="Project-detail-image-box">
             <img
