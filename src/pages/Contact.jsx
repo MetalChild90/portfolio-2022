@@ -17,9 +17,9 @@ function Contact() {
             <Flower />
             <a
               className="text-highlight"
-              href="https://facebook.com/EihnarenNemezisEnavirienne"
+              href="https://www.facebook.com/eihnaren.enavirienne"
             >
-              https://facebook.com/EihnarenNemezisEnavirienne
+              https://www.facebook.com/eihnaren.enavirienne
             </a>
           </li>
         </ul>

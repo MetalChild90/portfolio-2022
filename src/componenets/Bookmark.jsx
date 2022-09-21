@@ -5,7 +5,7 @@ import AppContext from "../context/AppContext";
 function Bookmark({ project: { id, title, bookmarkMoved } }) {
   const { contentWidth, setActiveBookmark, activeBookmark, setBookmarkWidth } =
     useContext(AppContext);
-  const [translateVar, setTranslateVar] = useState("");
+  const [translateVar, setTranslateVar] = useState(0);
 
   const bookmarkRef = useRef(0);
 
@@ -51,9 +51,9 @@ function Bookmark({ project: { id, title, bookmarkMoved } }) {
 }
 
 Bookmark.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  bookmarkMoved: PropTypes.bool.isRequired,
+  id: PropTypes.number,
+  title: PropTypes.string,
+  bookmarkMoved: PropTypes.bool,
 };
 
 export default Bookmark;

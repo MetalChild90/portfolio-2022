@@ -16,7 +16,7 @@ function Type() {
       }
     };
 
-    handlePrintWord("Hello, I'm Eichan!", 100);
+    handlePrintWord("Hello, I'm Agnieszka!", 100);
   }, []);
 
   return <span className="Type">{welcome}</span>;

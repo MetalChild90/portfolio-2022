@@ -203,9 +203,10 @@ body {
 }
 
 .Project-detail-image-box img {
-  margin: var(--Big) 0;
+  width: 80%;
+  margin: var(--Medium) 0;
   border-radius: var(--radiusSmall);
-  width: 70%;
+  box-shadow: 0px 1px 24px 0px rgba(66, 68, 90, 1);
 }
 
 .Project-detail-links {
@@ -216,7 +217,7 @@ body {
 
 .Project-detail-link {
   display: flex;
-  margin: var(--Small);
+  margin-bottom: var(--Small);
 }
 
 .Project-detail-link a {
@@ -238,7 +239,7 @@ body {
   color: var(--black);
   border-radius: var(--radiusSmall);
   text-align: center;
-  font-size: 24px;
+  font-size: 16px;
   user-select: none;
   transition: var(--transition-duration-Long);
 }
@@ -359,9 +360,9 @@ body {
   margin-top: var(--Big);
 }
 
-@media only screen and (max-width: 768px) and (orientation: landscape) {
+@media (max-width: 768px) and (orientation: landscape) {
   .Home-title {
-    margin: 0 0 var(--Small) 0;
+    margin: var(--Small) 0 var(--Small) 0;
   }
 
   .Navbar-link {
@@ -370,27 +371,23 @@ body {
   }
 
   .Project-detail-title {
-    margin-top: var(--Small);
+    margin-top: var(--Normal);
     margin-bottom: var(--Small);
   }
 
   .Project-detail-image-box img {
-    width: 50%;
+    width: 40%;
     margin: 0;
   }
 
   .Project-detail-links {
     flex-direction: row;
     justify-content: center;
+    margin-top: var(--Small);
   }
 
-  .inner-wrapper {
-    margin-top: 3vh;
-    width: 90%;
-  }
-
-  .Knowledge-item {
-    font-size: 16px;
+  .Project-detail-link:nth-last-child(1) {
+    margin-left: var(--Small);
   }
 
   .Contact-title {
@@ -406,7 +403,31 @@ body {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 576px) and (orientation: landscape) {
+  .Project-detail-title,
+  .Contact-title {
+    font-size: 23px;
+  }
+
+  .Project-detail-image-box img {
+    width: 70%;
+  }
+
+  .Contact-text ul {
+    margin-top: var(--Big);
+    margin-bottom: var(--Big);
+  }
+
+  .Contact-text ul li {
+    font-size: 17px;
+  }
+
+  .Contact-goodbye {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
   .Bookmark {
     width: 50px;
   }
@@ -417,10 +438,13 @@ body {
   .Home-text,
   .Bookmark-text,
   .Project-detail-,
-  .Contact-text,
   .Contact-text ul li,
   .Contact-goodbye {
     font-size: 25px;
+  }
+
+  .Contact-text {
+    font-size: 20px;
   }
 
   .Home-title,
@@ -440,19 +464,14 @@ body {
     width: 70%;
   }
 
-  .Project-detail-links {
+  .Project-detail-link {
     font-size: 24px;
+    margin: var(--Small);
   }
 
   .Knowledge-item {
     margin: var(--Small);
-    font-size: 40px;
-    text-shadow: 2px 2px 0 var(--textOutlineColor),
-      2px -2px 0 var(--textOutlineColor), -2px 2px 0 var(--textOutlineColor),
-      -2px -2px 0 var(--textOutlineColor), 2px 0px 0 var(--textOutlineColor),
-      0px 2px 0 var(--textOutlineColor), -2px 0px 0 var(--textOutlineColor),
-      0px -2px 0 var(--textOutlineColor);
-    color: var(--grey);
+    font-size: 30px;
   }
 
   .Flower {
@@ -470,7 +489,7 @@ body {
   }
 }
 
-@media only screen and (min-width: 768px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: landscape) {
   .Project-detail-title {
     margin-bottom: var(--Normal);
     font-size: 30px;
@@ -478,5 +497,21 @@ body {
 
   .Project-detail-links {
     font-size: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Contact-text {
+    font-size: 25px;
+  }
+
+  .Knowledge-item {
+    font-size: 40px;
+    text-shadow: 2px 2px 0 var(--textOutlineColor),
+      2px -2px 0 var(--textOutlineColor), -2px 2px 0 var(--textOutlineColor),
+      -2px -2px 0 var(--textOutlineColor), 2px 0px 0 var(--textOutlineColor),
+      0px 2px 0 var(--textOutlineColor), -2px 0px 0 var(--textOutlineColor),
+      0px -2px 0 var(--textOutlineColor);
+    color: var(--grey);
   }
 }

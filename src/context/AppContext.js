@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import beachImage from "../images/beach.png";
 import trackerImage from "../images/tracker.png";
+import ratingImage from "../images/rating.png";
 
 const AppContext = createContext();
 
@@ -14,24 +15,24 @@ export const Provider = ({ children }) => {
       id: 0,
       title: "Paradise Beach",
       image: beachImage,
-      website: "",
-      github: "",
+      website: "https://starlit-lolly-81b612.netlify.app",
+      github: "https://github.com/MetalChild90/paradise-beach-v2",
       bookmarkMoved: false,
     },
     {
       id: 1,
       title: "Crypto Tracker",
       image: trackerImage,
-      website: "",
-      github: "",
+      website: "https://reliable-seahorse-7150b7.netlify.app",
+      github: "https://github.com/MetalChild90/crypto-tracker-v3",
       bookmarkMoved: false,
     },
     {
       id: 2,
-      title: "Anime Character Review",
-      image: beachImage,
-      website: "",
-      github: "",
+      title: "Anime Character Rating",
+      image: ratingImage,
+      website: "https://gentle-klepon-526607.netlify.app",
+      github: "https://github.com/MetalChild90/anime-character-review",
       bookmarkMoved: false,
     },
   ]);

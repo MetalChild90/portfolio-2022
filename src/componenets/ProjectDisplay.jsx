@@ -4,6 +4,7 @@ import AppContext from "../context/AppContext";
 function ProjectDisplay() {
   const { projects, activeBookmark, contentWidth, bookmarkWidth } =
     useContext(AppContext);
+
   return (
     activeBookmark !== null && (
       <div
@@ -34,11 +35,25 @@ function ProjectDisplay() {
           <div className="Project-detail-links">
             <div className="Project-detail-link">
               <p>Website: </p>
-              <a href="http://github.com">http://github.com</a>
+              <a
+                href={projects[activeBookmark].website}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {contentWidth <= 700
+                  ? "link"
+                  : projects[activeBookmark].website}
+              </a>
             </div>
             <div className="Project-detail-link">
               <p>Code: </p>
-              <a href="http://github.com">http://github.com</a>
+              <a
+                href={projects[activeBookmark].github}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {contentWidth <= 700 ? "link" : projects[activeBookmark].github}
+              </a>
             </div>
           </div>
         </div>
