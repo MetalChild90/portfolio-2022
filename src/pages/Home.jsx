@@ -1,14 +1,14 @@
-import Type from "../componenets/Type";
+import Typing from "../componenets/Typing";
 import Cursor from "../componenets/Cursor";
 
 function Home() {
   return (
-    <div className="inner-wrapper">
-      <h1 className="Home-title">
-        <Type />
+    <div className="Home inner-wrapper">
+      <h1 className="title">
+        <Typing />
         <Cursor />
       </h1>
-      <div className="Home-text">
+      <div className="text">
         <p>And currently I'm looking for my first job in web development.</p>
         <p>
           Although I don't have commercial experience, what makes me a valuable

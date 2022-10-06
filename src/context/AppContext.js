@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { getUpdatedProjects } from "../helpers/getUpdatedProjects";
 import beachImage from "../images/beach.png";
 import trackerImage from "../images/tracker.png";
 import ratingImage from "../images/rating.png";
@@ -42,45 +43,7 @@ export const Provider = ({ children }) => {
   }, [projectsWidth, bookmarkWidth]);
 
   useEffect(() => {
-    if (activeBookmark === 2) {
-      const newProjectsArray = () => {
-        return projects.map((item) => {
-          if (item.id === 2) {
-            return { ...item, bookmarkMoved: true };
-          } else if (item.id !== 2) {
-            return { ...item, bookmarkMoved: false };
-          }
-          return item;
-        });
-      };
-      setProjects(newProjectsArray);
-    } else if (activeBookmark === 1) {
-      const newProjectsArray = () => {
-        return projects.map((item) => {
-          if (item.id >= 1) {
-            return { ...item, bookmarkMoved: true };
-          } else if (item.id < 1) {
-            return { ...item, bookmarkMoved: false };
-          }
-          return item;
-        });
-      };
-      setProjects(newProjectsArray);
-    } else if (activeBookmark === 0) {
-      const newProjectsArray = () => {
-        return projects.map((item) => {
-          return { ...item, bookmarkMoved: true };
-        });
-      };
-      setProjects(newProjectsArray);
-    } else if (activeBookmark === null) {
-      const newProjectsArray = () => {
-        return projects.map((item) => {
-          return { ...item, bookmarkMoved: false };
-        });
-      };
-      setProjects(newProjectsArray);
-    }
+    setProjects(getUpdatedProjects(projects, activeBookmark));
     // eslint-disable-next-line
   }, [activeBookmark]);
 

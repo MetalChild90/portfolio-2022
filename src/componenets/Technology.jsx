@@ -13,7 +13,7 @@ function Technology({ technology, i }) {
   return (
     <li
       key={i}
-      className="Knowledge-item"
+      className="technology"
       onMouseEnter={toggleHovered}
       onMouseLeave={toggleHovered}
       style={{

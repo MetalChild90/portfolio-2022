@@ -2,15 +2,17 @@ import Technology from "../componenets/Technology";
 
 function Knowledge() {
   const technologies = [
-    { name: "HTML", color: "#f06529", bgColor: "rgba(240, 101, 41, 0.2)" },
-    { name: "CSS", color: "#2965f1", bgColor: "rgba(41, 101, 241, 0.2)" },
-    { name: "SASS", color: "#cc6699", bgColor: "rgba(204, 102, 153, 0.2)" },
+    { name: "html", color: "#f06529", bgColor: "rgba(240, 101, 41, 0.2)" },
+    { name: "css", color: "#2965f1", bgColor: "rgba(41, 101, 241, 0.2)" },
+    { name: "sass", color: "#cc6699", bgColor: "rgba(204, 102, 153, 0.2)" },
     {
-      name: "JAVASCRIPT",
+      name: "javascript",
       color: "#f7df1e",
       bgColor: "rgba(247, 223, 30, 0.2)",
     },
-    { name: "REACT", color: "#61DBFB", bgColor: "rgba(97, 219, 251, 0.2)" },
+    { name: "react", color: "#61DBFB", bgColor: "rgba(97, 219, 251, 0.2)" },
+    { name: "redux", color: "#764abc", bgColor: "rgba(118, 74, 188, 0.2)" },
+    { name: "git", color: "#f34f29", bgColor: "rgba(243, 79, 41, 0.2)" },
   ];
 
   return (

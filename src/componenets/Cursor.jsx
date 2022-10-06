@@ -12,11 +12,7 @@ function Cursor() {
       clearInterval(interval);
     };
   }, [visible]);
-  return (
-    <span className={`Home-console-underscore ${visible && "hidden"}`}>
-      &#95;
-    </span>
-  );
+  return <span className={`cursor ${visible && "hidden"}`}>&#95;</span>;
 }
 
 export default Cursor;

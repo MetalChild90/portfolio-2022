@@ -1,15 +1,16 @@
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
+import ProjectContent from "./ProjectContent";
 
 function ProjectDisplay() {
-  const { projects, activeBookmark, contentWidth, bookmarkWidth } =
+  const { activeBookmark, contentWidth, bookmarkWidth } =
     useContext(AppContext);
 
   return (
     activeBookmark !== null && (
       <div
-        className={`Project-detail-wrapper inner-wrapper ${
-          activeBookmark !== null && "Project-detail-visible"
+        className={`Project-detail inner-wrapper ${
+          activeBookmark !== null && "visible"
         }`}
         style={{
           width: `${contentWidth}px`,
@@ -22,41 +23,7 @@ function ProjectDisplay() {
           }px`,
         }}
       >
-        <div>
-          <div className="Project-detail-title">
-            <h3>{projects[activeBookmark].title}</h3>
-          </div>
-          <div className="Project-detail-image-box">
-            <img
-              src={projects[activeBookmark].image}
-              alt={projects[activeBookmark].title}
-            />
-          </div>
-          <div className="Project-detail-links">
-            <div className="Project-detail-link">
-              <p>Website: </p>
-              <a
-                href={projects[activeBookmark].website}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {contentWidth <= 700
-                  ? "link"
-                  : projects[activeBookmark].website}
-              </a>
-            </div>
-            <div className="Project-detail-link">
-              <p>Code: </p>
-              <a
-                href={projects[activeBookmark].github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {contentWidth <= 700 ? "link" : projects[activeBookmark].github}
-              </a>
-            </div>
-          </div>
-        </div>
+        <ProjectContent />
       </div>
     )
   );
